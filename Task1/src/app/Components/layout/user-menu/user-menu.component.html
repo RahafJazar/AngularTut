@@ -1,4 +1,4 @@
 <div id="User-Menu">
-    <span>Rahaf Jazar</span>
-    <button>*g*</button>
+    <app-user-name [userName]="yourName"></app-user-name>
+    <app-logout (logOutFromHeader)="logOutFromMenu($event)"></app-logout>
 </div>

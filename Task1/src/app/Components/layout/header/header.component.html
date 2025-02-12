@@ -1,3 +1,6 @@
+<div class="personInfo">
+    Please Enter Your Name : <input type="text" (keyup)="setUserName($event)">
+</div>
 <div class="header">
     <!--Group two elements into left section -->
     <div class="left-section">
@@ -5,5 +8,5 @@
         <app-menu-bar></app-menu-bar>
     </div>
     <!--right section-->
-    <app-user-menu></app-user-menu>
+    <app-user-menu [yourName]="myName" (logOutFromHeader)="logOutFromHeader($event)"></app-user-menu>
 </div>
