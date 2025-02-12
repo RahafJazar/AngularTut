@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { layoutComponents } from '../layoutComponents';
 
 @Component({
@@ -9,8 +9,5 @@ import { layoutComponents } from '../layoutComponents';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-@Output() LogoutClick:EventEmitter<boolean>=new EventEmitter<boolean>()
-logoutClicked():void{
-  this.LogoutClick.emit(true)
-}
+
 }
