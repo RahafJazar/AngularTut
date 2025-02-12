@@ -1,0 +1,10 @@
+<div class="header">
+    <!--Group two elements into left section -->
+    <div class="left-section">
+        <app-logo></app-logo>
+        <app-menu-bar></app-menu-bar>
+    </div>
+    <!--right section-->
+    <app-user-menu [userName]="userName"></app-user-menu>
+</div>
+<button type="button" (click)="logoutClicked()">ClickS</button>

@@ -1,0 +1,19 @@
+#Menu-Bar ul {
+    list-style: none;
+    margin-left: 0;
+    text-align: center;
+
+    li {
+        display: inline-block;
+        padding: 5px;
+        margin-right: 1px;
+        border: 1px solid red;
+        background-color: rgb(118, 192, 118);
+
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}

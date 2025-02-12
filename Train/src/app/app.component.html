@@ -1,0 +1,36 @@
+<div class="container">
+  <app-header (LogoutClick)="logoutClicked($event)"></app-header>
+</div>
+<router-outlet></router-outlet>
+<h2>Page title: {{title}}</h2>
+<h3> Name : {{obj.name}} - Age: {{obj.age}}</h3>
+Change title :<input type="text" (change)="changeTitle($event)" (keydown)="keyDownTitle($event)"
+  (keyup)="keyUpTitle($event)" (keypress)="keyPressTitle($event)">
+<button (click)="buttonClicked()"> change name</button>
+<div id="Doc">
+  <h1>J</h1>
+  <h2>poll</h2>
+</div>
+<p>{{x}}</p>
+
+<div>
+  <button (click)="buttonNumberClicked($event)">1</button>
+  <button (click)="buttonNumberClicked($event)">2</button>
+  <button (click)="buttonNumberClicked($event)">3</button>
+  <button (click)="buttonNumberClicked($event)">4</button>
+  <button (click)="buttonNumberClicked($event)">5</button>
+  <button (click)="buttonNumberClicked($event)">6</button>
+  <button (click)="buttonNumberClicked($event)">7</button>
+  <button (click)="buttonNumberClicked($event)">8</button>
+  <button (click)="buttonNumberClicked($event)">9</button>
+</div>
+<hr style="color: green; size:30px">
+userName : {{userName}}
+<br>
+change userName: <input type="text" (change)="changeUserName($event)">
+
+
+<br>
+<app-user-menu [userName]="userName"></app-user-menu>
+<app-header [userName]="userName" (LogoutClick)="logOutClicked($event)"></app-header>
+<router-outlet></router-outlet>

@@ -1,0 +1,15 @@
+<p>contact works!</p>
+<div>
+    <div>
+        Name  :{{contactData.name}}
+    </div>
+    <div>
+        email :{{contactData.email}}
+    </div>
+    <div>
+        message  :{{contactData.message}}
+    </div>
+</div>
+<app-contact-form (formSubmitted)="formSubmitted($event)"></app-contact-form>
+
+
