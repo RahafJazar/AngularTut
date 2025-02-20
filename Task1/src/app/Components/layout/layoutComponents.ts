@@ -1,10 +1,16 @@
 import { LogoComponent } from "./logo/logo.component";
+import { LogoutComponent } from "./logout/logout.component";
 import { MenuBarComponent } from "./menu-bar/menu-bar.component";
 import { UserMenuComponent } from "./user-menu/user-menu.component";
+import { UserNameComponent } from "./user-name/user-name.component";
 
-export const layoutComponents: any[] = [
+const layoutComponents: any[] = [
     LogoComponent,
     MenuBarComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    UserNameComponent,
+    LogoutComponent
+
 
 ]
+export default layoutComponents;
