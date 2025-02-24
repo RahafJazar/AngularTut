@@ -1,0 +1,42 @@
+<div class="header" [class]="otherColor">
+    <app-header (themedColored)="changeTheme($event)"></app-header>
+</div>
+
+<div class="main" >
+    <div class="sidebar" [class]="otherColor">
+        <app-side-bar></app-side-bar>
+    </div>
+    <div class="content" [class]="bgColor">
+
+
+        <div class="company-info">
+            <img src="../../assets/iihLogoRmBG.png" alt="">
+            <h3>Ideal Innovation House</h3>
+            <div class="about">
+                empowering innovations and enriching lives by combining AI and advanced technology with a
+                human-centric approach.
+
+                As a leading technology solutions provider, we specialize in AI, software development, staffing, and
+                digital transformation. With a talented team and a strong presence in Amman, we cater to businesses
+                worldwide, delivering cutting-edge solutions that drive growth and efficiency.
+
+                With a team of 51-200 professionals, we are committed to pushing the boundaries of innovation,
+                helping businesses harness the power of AI and technology to stay ahead in an ever-evolving digital
+                landscape.
+            </div>
+        </div>
+        <div class="company-social">
+            <a href="https://www.iih.ai/en-US">Website</a>
+            <label for="email"></label>
+            <span> {{email}}</span>
+        </div>
+
+
+
+    </div>
+</div>
+
+<div class="footer" [class]="otherColor">
+
+    <app-footer></app-footer>
+</div>

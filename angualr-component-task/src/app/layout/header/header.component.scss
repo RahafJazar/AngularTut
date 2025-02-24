@@ -1,0 +1,21 @@
+.header-welcome {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+        font-family: initial;
+    }
+
+    .right-side {
+
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+    }
+    button{
+        background-color: antiquewhite;
+        border-radius: 10px;
+        padding: 5px;
+    }
+}

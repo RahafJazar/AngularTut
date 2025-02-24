@@ -1,0 +1,10 @@
+<div class="header-welcome">
+    <div class="left-side">
+        <span>Hello and welcome </span>
+        <app-user-name [first-name]="firstName" [last-name]="lastName"></app-user-name>
+    </div>
+    <div class="right-side">
+        <img [attr.src]="themeImagePath" alt="" (click)="changeTheme()">
+        <button (click)="logoutPressed()">LogOut</button>
+    </div>
+</div>
