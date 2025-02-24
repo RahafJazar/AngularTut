@@ -1,0 +1,68 @@
+.myProfile {
+
+    justify-content: space-around;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    max-width: 400px;
+}
+
+/* User Info Section */
+.user-info {
+    margin-top: 20px;
+    text-align: center;
+
+
+    .email-info {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Company Logo */
+.company-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.company-name {
+    font-family: sans-serif;
+}
+
+/* User Profile Picture */
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+}
+
+/* Edit Profile Button */
+.edit-btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.edit-btn:hover {
+    background: #0056b3;
+}
+
+.lightTheme {
+    background-color: white;
+}
+
+.darkTheme {
+    background-color: rgb(107, 102, 102) !important;
+}

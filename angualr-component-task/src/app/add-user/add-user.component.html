@@ -1,0 +1,31 @@
+<div class="header" [class]="otherColor">
+    <app-header (themedColored)="changeTheme($event)"></app-header>
+</div>
+
+<div class="main">
+    <div class="sidebar" [class]="otherColor">
+        <app-side-bar></app-side-bar>
+    </div>
+    <div class="content" [class]="bgColor">
+        
+            <form action="">
+                <div class="user-form">
+                    First Name: <input type="text" (change)="setFirstName($event)"> <br>
+                    Last Name: <input type="text" (change)="setLastName($event)"> <br>
+                    Email  : <input type="text" (change)="setEmail($event)"> <br>
+                    Password : <input type="password" (change)="setPassword($event)"> <br>
+                    confirm password : <input type="passord"  (change) = "setConfirmPassword($event)">
+                </div>
+                <button (click)="checkFormValidation()">User</button>
+            </form>
+    
+    </div>
+</div>
+
+<div class="footer" [class]="otherColor">
+
+    <app-footer></app-footer>
+</div>
+
+
+<app-user-name [first-name]="firstName" [last-name]="lastName"></app-user-name>

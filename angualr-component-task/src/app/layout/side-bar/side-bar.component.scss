@@ -1,0 +1,12 @@
+.side-bar{
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 14px;
+
+    a{
+        color: rgb(66, 64, 64);
+        text-decoration: none;
+        font-weight: bold;
+        font-family: cursive;
+    }
+}

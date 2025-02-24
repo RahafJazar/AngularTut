@@ -1,0 +1,38 @@
+<div class="header" [class]="otherColor">
+    <app-header (themedColored)="changeTheme($event)"></app-header>
+</div>
+
+<div class="main">
+    <div class="sidebar" [class]="otherColor">
+        <app-side-bar></app-side-bar>
+    </div>
+    <div class="content" [class]="bgColor">
+        <div>
+            <img src="../../assets/iihLogoRmBG1.png" alt="Company Logo" class="company-logo">
+
+        </div>
+
+        <div class="myProfile">
+
+            <div class="user-info">
+                <img src="../../assets/userImage.png" alt="User Image" class="profile-pic">
+                <h2>Rahaf Jazar</h2>
+                <p style="font-size: small;">Software Developer</p>
+                <div class="email-info">
+                    <p>Email: {{email}}</p>
+                    <p></p>
+                </div>
+                <button class="edit-btn">Edit Profile</button>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+<div class="footer" [class]="otherColor">
+
+    <app-footer></app-footer>
+</div>

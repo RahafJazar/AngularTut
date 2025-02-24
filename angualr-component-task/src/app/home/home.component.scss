@@ -1,0 +1,41 @@
+ .home {
+     background-image: url("../../assets/image.png");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     width: 100vw;
+     height: 100vh;
+     display: flex;
+     justify-content: flex-end;
+     /* Pushes content to the right */
+     align-items: center;
+     /* Centers vertically */
+     padding-right: 15%;
+     /* Adjust right spacing */
+     position: relative;
+
+ }
+
+ .img-logo {
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 100px;
+     height: auto;
+ }
+
+ /* Style for Login Button */
+ .login-btn {
+     padding: 15px 30px;
+     font-size: 18px;
+     background-color: #b67f41;
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: 0.3s;
+ }
+
+ .login-btn:hover {
+     background-color: #bb8116;
+ }
