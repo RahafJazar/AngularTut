@@ -1,0 +1,17 @@
+<form action="">
+    <!--User Email-->
+
+    <div>
+        <label for="user-email">Email</label> 
+        <input type="text" name="email" id="user-email" (change)="setEmail($event)">
+        </div>
+
+        <br>
+        <!--User Password-->
+        <div>
+            <label for="user-password">Password</label>
+            <input type="password" name="password" id="user-password" (change)="setPassword($event)">
+        </div>
+
+        <button type="button" (click)="checkLoginValidation()">Login</button>
+</form>
