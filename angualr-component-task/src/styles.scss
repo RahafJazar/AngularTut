@@ -16,8 +16,8 @@ body {
 
 /* Header */
 .header {
-    background: #346594a4;
-    color: white;
+    background: transparent;
+    color: black;
     text-align: center;
     padding: 15px;
     font-size: 20px;
@@ -45,14 +45,15 @@ body {
 
     height: 84vh;
     overflow-y: auto;
-    background-image: url("./assets/contentbackground4.jpg");
+    background-image: url("./assets/background3.jpg");
+
     background-size: cover;
 }
 
 /* Footer */
 .footer {
-    background: #346594a4;
-    color: white;
+    background: transparent;
+    color: black;
     text-align: center;
     padding: 15px;
 }

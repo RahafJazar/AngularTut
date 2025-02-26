@@ -1,5 +1,5 @@
  .home {
-     background-image: url("../../assets/background2.jpg");
+     background-image: url("../../assets/background3.jpg");
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
@@ -43,6 +43,16 @@
      background-color: #9d68e7;
  }
 
+
+
+
+ p {
+     color: white;
+     font-size: large;
+     font-weight: bold;
+     transform: translateX(-100px);
+     padding-bottom: 20px;
+ }
 
 
  @keyframes zoomInBackground {

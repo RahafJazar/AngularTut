@@ -1,25 +1,47 @@
-.background-Details {
-    background-image: url("../../assets/background2.jpg");
-    background-size: cover;
-
+.login-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     position: relative;
 }
 
+/* Background Video */
+.background-Details {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -10;
+}
+
+.background-Details video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Background Box */
 .background {
     background-color: #080710;
     width: 450px;
     height: 550px;
     position: absolute;
-    transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 15px;
     overflow: hidden;
 }
+
+/* Login Form */
+
 
 .background .shape {
     height: 200px;
@@ -46,15 +68,16 @@ form {
     width: 400px;
     background-color: rgba(255, 255, 255, 0.1);
     position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
     left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 20px;
     backdrop-filter: blur(12px);
     border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.5);
     padding: 40px 35px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.8s ease-in-out;
+    /* Smooth movement */
 }
 
 form:hover {
@@ -128,39 +151,3 @@ input:focus {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
-
-// .social {
-//     margin-top: 30px;
-//     display: flex;
-//     justify-content: space-between;
-// }
-
-// .social div {
-//     background-color: rgba(255, 255, 255, 0.15);
-//     width: 48%;
-//     border-radius: 8px;
-//     padding: 10px 15px;
-//     text-align: center;
-//     color: #eaf0fb;
-//     font-weight: 500;
-//     cursor: pointer;
-//     transition: 0.3s ease;
-// }
-
-// .social div:hover {
-//     background-color: rgba(255, 255, 255, 0.25);
-// }
-
-// .social .go {
-//     background-color: #db4437;
-//     /* Google red */
-// }
-
-// .social .fb {
-//     background-color: #3b5998;
-//     /* Facebook blue */
-// }
-
-// .social i {
-//     margin-right: 8px;
-// }
