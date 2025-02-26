@@ -1,10 +1,14 @@
 <div class="header-welcome">
     <div class="left-side">
-        <span>Hello and welcome </span>
-        <app-user-name [first-name]="firstName" [last-name]="lastName"></app-user-name>
+
+        <img src="../../../assets/iihLogo2RmBG.png" alt="Company Logo" class="company-logo">
+        <div class="greeting">
+            <span>Hello and welcome,</span>
+            <app-user-name [first-name]="firstName" [last-name]="lastName"></app-user-name>
+        </div>
     </div>
     <div class="right-side">
-        <img [attr.src]="themeImagePath" alt="" (click)="changeTheme()">
-        <button (click)="logoutPressed()">LogOut</button>
+        <img [attr.src]="themeImagePath" alt="Theme Icon" class="theme-icon" (click)="changeTheme()">
+        <button (click)="logoutPressed()">Log Out</button>
     </div>
 </div>
