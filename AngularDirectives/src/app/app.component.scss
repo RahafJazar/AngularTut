@@ -1,0 +1,25 @@
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+
+}
+
+.panel {
+    width: 100%;
+    background-color: rgb(173, 164, 164);
+    border: 1px solid black;
+    color: white;
+    padding: 5px;
+
+}
+
+#success {
+    background-color: green;
+    color: white;
+}
+
+#failed {
+    background-color: red;
+    color: white;
+}

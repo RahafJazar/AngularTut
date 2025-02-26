@@ -1,0 +1,34 @@
+<router-outlet></router-outlet>
+<div>
+  <div class="panel-header">
+    <span>Users table </span><button (click)="toggleButtonClick()"> Show/Hide panel</button>
+  </div>
+  <div class="panel" *ngIf="showPanel">
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+
+  <div [ngSwitch]="userStatus">
+    <div id="success" *ngSwitchCase="userStatusEnum.success">success</div>
+    <div id="success" *ngSwitchCase="userStatusEnum.failed">failed</div>
+    <div id="pending" *ngSwitchCase="userStatusEnum.pending">pending</div>
+    <div *ngSwitchCaseDefault="default">default</div>
+  </div>
+</div>
