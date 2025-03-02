@@ -1,0 +1,59 @@
+<router-outlet></router-outlet>
+<div>
+  <div class="panel-header">
+    <span>Users table </span><button (click)="toggleButtonClick()"> Show/Hide panel</button>
+  </div>
+  <div class="panel" *ngIf="showPanel">
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+
+  <div [ngSwitch]="userStatus">
+    <div id="success" *ngSwitchCase="userStatusEnum.success">success</div>
+    <div id="success" *ngSwitchCase="userStatusEnum.failed">failed</div>
+    <div id="pending" *ngSwitchCase="userStatusEnum.pending">pending</div>
+    <div *ngSwitchCaseDefault="default">default</div>
+  </div>
+
+
+  <div class="bg-color" [ngClass]="attributeDirec" [ngStyle]="divStyle">
+    welcome to angular
+  </div>
+
+
+  <div>
+    <input type="text" name="userEmail" [(ngModel)]="ngModelEmail">
+    {{ngModelEmail}}
+  </div>
+
+  <app-child1 [(name)]="namex"></app-child1>
+  parent :{{namex}}
+
+
+
+  <hr>
+
+  <div>
+    <app-child>
+      <h1 userName>{{child.firstName}} </h1>
+      <h3 userAge>30</h3>
+    </app-child>
+  </div>
+</div>

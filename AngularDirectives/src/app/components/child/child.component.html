@@ -1,0 +1,22 @@
+<div class="child">
+    
+<div>
+    child component :
+</div>
+<!-- <ng-content></ng-content> -->
+
+<table border="1">
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>  <ng-content select="[userName]"></ng-content></td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td>  <ng-content select="[userAge]"></ng-content></td>
+        </tr>
+
+    </tbody>
+</table>
+{{firstName}}-{{lastName}}
+</div>
