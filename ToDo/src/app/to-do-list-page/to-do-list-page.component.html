@@ -1,0 +1,4 @@
+<div class="wrapper">
+    <app-todo-form (itemAdd)="addItemHandler($event)"> </app-todo-form>
+    <app-todo-list [itemList]="items" (resetFactoryChange)="resetFactoryHandler($event)"></app-todo-list>
+</div>
