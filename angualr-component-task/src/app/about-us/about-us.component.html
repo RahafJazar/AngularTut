@@ -2,35 +2,51 @@
     <app-header (themedColored)="changeTheme($event)"></app-header>
 </div>
 
-<div class="main" >
+<div class="main">
     <div class="sidebar" [class]="otherColor">
         <app-side-bar></app-side-bar>
     </div>
     <div class="content" [class]="bgColor">
 
 
-        <div class="company-info">
-            <img src="../../assets/iihLogoRmBG.png" alt="">
-            <h3>Ideal Innovation House</h3>
-            <div class="about">
-                empowering innovations and enriching lives by combining AI and advanced technology with a
-                human-centric approach.
-
-                As a leading technology solutions provider, we specialize in AI, software development, staffing, and
-                digital transformation. With a talented team and a strong presence in Amman, we cater to businesses
-                worldwide, delivering cutting-edge solutions that drive growth and efficiency.
-
-                With a team of 51-200 professionals, we are committed to pushing the boundaries of innovation,
-                helping businesses harness the power of AI and technology to stay ahead in an ever-evolving digital
-                landscape.
+        <section class="section-visionMission">
+            <div class="section-visionMission-contanier">
+                <div class="d-flex align-items-center justify-content-center fx-visionMission fx-visionMission1">
+                    <div class="fx-visionMission-texts">
+                        <div class="fx-visionMission-texts-width">
+                            <h6 class="text-head">Our Vision</h6>
+                            <h2 class="text-48size">Innovation Elevates Humanity</h2>
+                            <div class="text-24size">
+                                We envision a future where technology is accessible and impactful for global businesses
+                                of all sizes, seamlessly integrating with and amplifying human potential. By leveraging
+                                AI and machine learning technologies to drive hyper-personalization and advanced data
+                                analytics, we aim to create a world where innovation elevates humanity, fostering a more
+                                connected, efficient, and sustainable future.
+                            </div>
+                        </div>
+                    </div>
+                    <img src="../../assets/AImage.png" alt="Our Vision" style="z-index: -5;">
+                </div>
+                <div class="d-flex align-items-center justify-content-center fx-visionMission">
+                    <img src="../../assets/AIImage2.png" alt="Our Mission" class="order2">
+                    <div class="fx-visionMission-texts order1">
+                        <div class="fx-visionMission-texts-width">
+                            <h6 class="text-head">Our Mission</h6>
+                            <h2 class="text-48size">
+                                <p>Transformative Results </p>
+                            </h2>
+                            <div class="text-24size">
+                                Our mission is to leverage top-tier talent and expertise to deliver customized AI-driven
+                                technology solutions that produce transformative results for our clients. We focus on
+                                fostering innovation, maximizing efficiency, and advancing technological excellence to
+                                ensure our clients stay ahead in a dynamic landscape.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="/theme/Software/images/circle.svg" alt="circle" class="circle" style="z-index: -1;">
             </div>
-        </div>
-        <div class="company-social">
-            <a href="https://www.iih.ai/en-US">Website</a>
-            <label for="email"></label>
-            <span> {{email}}</span>
-        </div>
-
+        </section>
 
 
     </div>

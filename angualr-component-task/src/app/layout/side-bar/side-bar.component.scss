@@ -1,12 +1,51 @@
-.side-bar{
-    display: grid;
-    grid-template-rows: 1fr;
-    gap: 14px;
+// .side-bar{
+//     display: grid;
+//     grid-template-rows: 1fr;
+//     gap: 14px;
 
-    a{
-        color: rgb(66, 64, 64);
-        text-decoration: none;
-        font-weight: bold;
-        font-family: cursive;
-    }
+//     a{
+//         color: rgb(66, 64, 64);
+//         text-decoration: none;
+//         font-weight: bold;
+//         font-family: cursive;
+//     }
+// }
+
+/* Sidebar Styling */
+.side-bar {
+
+    /* Fixed width */
+    min-height: 100%;
+    /* Full height */
+    background-color: #2c3e50;
+    /* Dark blue-gray background */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* Space between links */
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2);
+    /* Sidebar shadow */
+}
+
+/* Sidebar Links */
+.side-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover & Active Effects */
+.side-bar a:hover {
+    background-color: #3498db;
+    /* Light blue hover effect */
+    color: white;
 }

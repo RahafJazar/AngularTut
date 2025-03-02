@@ -1,5 +1,5 @@
  .home {
-     background-image: url("../../assets/image.png");
+     background-image: url("../../assets/background3.jpg");
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
@@ -13,29 +13,60 @@
      padding-right: 15%;
      /* Adjust right spacing */
      position: relative;
-
+     filter: brightness(1.3);
+     animation: zoomInBackground 20s infinite;
  }
 
  .img-logo {
      position: absolute;
      top: 0;
-     right: 0;
-     width: 100px;
+     left: 0;
+     width: 300px;
      height: auto;
+     filter: brightness(2);
  }
 
  /* Style for Login Button */
  .login-btn {
+     width: 250px;
      padding: 15px 30px;
      font-size: 18px;
-     background-color: #b67f41;
-     color: white;
+     background-color: #93a5a1;
+     color: black;
      border: none;
-     border-radius: 5px;
+     border-radius: 40px;
      cursor: pointer;
      transition: 0.3s;
  }
 
  .login-btn:hover {
-     background-color: #bb8116;
+     background-color: #9d68e7;
+ }
+
+
+
+
+ p {
+     color: white;
+     font-size: large;
+     font-weight: bold;
+     transform: translateX(-100px);
+     padding-bottom: 20px;
+ }
+
+
+ @keyframes zoomInBackground {
+     0% {
+         transform: scale(1);
+     }
+
+     50% {
+         transform: scale(1.1);
+         /* Zooms in slightly */
+     }
+
+     100% {
+         transform: scale(1);
+         /* Zooms back out */
+     }
  }

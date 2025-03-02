@@ -27,6 +27,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     width: 100%;
+    margin-top: 20%;
     max-width: 500px;
 }
 
@@ -41,7 +42,7 @@
 
 /* Button Styling */
 button {
-    background-color: #007bff;
+    background-color: #76327c;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -55,7 +56,8 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #e7c4e0;
+    color: black;
 }
 
 .lightTheme {

@@ -1,9 +1,11 @@
 .myProfile {
 
     justify-content: space-around;
-    background: white;
+    color: white;
+    background-color: transparent;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 100px;
+    border: 1px solid white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 50px auto;
     max-width: 400px;

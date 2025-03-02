@@ -1,11 +1,22 @@
+import { animate, style, transition, trigger, ɵBrowserAnimationBuilder } from '@angular/animations';
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  animations: [
+    trigger('slideIn', [
+      transition(':enter', [
+        style({ transform: 'translateY(-100%)', opacity: 0 }), // Start position (above screen)
+        animate('1s ease-out', style({ transform: 'translateY(0)', opacity: 1 })) // Animate down
+      ])
+    ])
+  ]
+
 })
 export class LoginComponent {
   email: string = '';
@@ -30,4 +41,6 @@ export class LoginComponent {
       window.location.assign("/profile")
     }
   }
+
+
 }

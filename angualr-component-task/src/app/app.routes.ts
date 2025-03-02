@@ -5,30 +5,35 @@ import { ProfileComponent } from './profile/profile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { animation } from '@angular/animations';
 
 export const routes: Routes = [
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+       data:{animation:"HomePage"}
+
     },
     {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        data: { animation: 'LoginPage' }
+
     },
     {
         path: 'profile',
         component: ProfileComponent
     },
     {
-        path:'contact-us',
-        component:ContactUsComponent
+        path: 'contact-us',
+        component: ContactUsComponent
     },
     {
-        path:'add-user',
-        component:AddUserComponent
+        path: 'add-user',
+        component: AddUserComponent
     },
     {
-        path:'about-us',
-        component:AboutUsComponent
+        path: 'about-us',
+        component: AboutUsComponent
     }
 ];

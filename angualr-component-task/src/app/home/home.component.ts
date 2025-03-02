@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
- 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -8,8 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  
-  goToLogin():void {
-    window.location.href="/login"
+
+  constructor(private router: Router) { }
+  goToLogin(): void {
+    this.router.navigate(["/login"])
   }
 }
