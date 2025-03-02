@@ -9,17 +9,17 @@ import { ChildComponent } from './components/child/child.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, Child1Component ,ChildComponent],
+  imports: [RouterOutlet, CommonModule, FormsModule, Child1Component, ChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     console.log(this.child.firstName)
-    this.child.firstName="Aymam"
+    this.child.firstName = "Aymam"
   }
   ngOnInit(): void {
-   
+
   }
   initiUsers(): User[] {
     return [
@@ -59,8 +59,8 @@ export class AppComponent implements AfterViewInit {
 
 
   //viewchild
-  @ViewChild(ChildComponent) child! :ChildComponent;
- 
+  @ViewChild(ChildComponent) child!: ChildComponent;
+
 
 }
 enum UserStatus {
