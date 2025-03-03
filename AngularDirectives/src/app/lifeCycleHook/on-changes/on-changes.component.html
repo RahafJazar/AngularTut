@@ -1,0 +1,7 @@
+<div class="inputs">
+    Power <input type="text" [(ngModel)]="power">
+    hero.name : <input type="text" [value]="hero[0]?.name">
+</div>
+<div *ngFor="let change of changeLog ">
+    {{change}}
+</div>
