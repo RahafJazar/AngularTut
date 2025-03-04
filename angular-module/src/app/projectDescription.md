@@ -7,8 +7,11 @@
 
 📌 Features and Implementation
 1️⃣ Content Projection (Card Component)
+
+
 📌 What is it?
 Content projection allows you to pass HTML inside a reusable component.
+
 
 📌 How to Implement?
 1️⃣ Create a Card Component
