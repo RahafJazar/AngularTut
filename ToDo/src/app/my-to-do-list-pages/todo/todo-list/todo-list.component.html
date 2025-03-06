@@ -1,0 +1,27 @@
+<h1>
+    Items List :
+</h1>
+
+<div class="buttons">
+    <button (click)="clearList()" *ngIf="itemsList.length">Clear List </button>
+    <button (click)="resetFactory()" *ngIf="itemsList.length">ResetFactory</button>
+    <button (click)="resetStatus()">ResetStatus</button>
+</div>
+<div>
+    <div class="list-item" *ngFor="let item of itemsList ; let i=index"
+        [ngClass]="{'deleted': item.status=== ToDoStatus.Deleted , 'restored' : item.status ===ToDoStatus.Restored}">
+
+        <div class="title" [ngClass]="{'deleted':item.status === ToDoStatus.Deleted}">
+            {{item.title}}
+        </div>
+
+        <div class="actions">
+            <button (click)="deleteHandler(i)" *ngIf="item.status !==ToDoStatus.Deleted">Delete</button>
+            <button (click)="restoreHandler(item)" *ngIf="item.status ===ToDoStatus.Deleted">Restore</button>
+            <span>{{item.status}}</span>
+        </div>
+    </div>
+    <div *ngIf="itemsList.length == 0 " class="no-item-message">
+        There are no Items
+    </div>
+</div>

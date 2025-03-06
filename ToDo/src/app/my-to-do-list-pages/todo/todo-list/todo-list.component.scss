@@ -1,0 +1,62 @@
+.list-item {
+    font-size: 15px;
+    background-color: bisque;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 2px;
+    width: 100%;
+    min-width: 350px;
+    display: flex;
+    justify-content: space-between;
+
+    &.deleted {
+        background-color: red;
+        border-style: dashed;
+    }
+
+    &.restored {
+        background-color: rgb(210, 233, 109);
+    }
+
+
+
+    .title {
+        font-weight: bold;
+
+        &.deleted {
+            text-decoration: line-through;
+        }
+
+        &.restored {}
+
+    }
+
+    .actions {
+        font-style: italic;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}
+
+.buttons {
+    margin-bottom: 7px;
+    display: flex;
+    justify-content: space-between;
+
+
+    button {
+        border: 1px solid purple;
+        border-radius: 1rem;
+    }
+}
+
+.no-item-message {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    max-width: 300px;
+    overflow: auto;
+}
