@@ -1,0 +1,22 @@
+.header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+
+    .links {
+
+        margin-block-start: 1em;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        padding: 5px;
+        font-weight: none;
+
+        &:visited {
+            color: orange;
+        }
+    }
+}

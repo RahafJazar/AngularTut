@@ -1,0 +1,26 @@
+.company {
+    display: flex;
+    gap: 1em;
+
+    .menu {
+        background-color: red;
+
+        ul {
+            padding: 0;
+            list-style: none;
+
+            li {
+                padding: 0;
+                margin: 5px;
+
+                a {
+                    color: white;
+
+                    &:visited {
+                        color: navy;
+                    }
+                }
+            }
+        }
+    }
+}
