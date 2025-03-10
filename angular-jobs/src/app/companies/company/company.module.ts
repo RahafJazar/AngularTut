@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CompanyProfileComponent } from '../components/company-profile/company-profile.component';
+import { JobsModule } from '../jobs/jobs.module';
+import { UsersModule } from '../users/users.module';
+import { CompanyRoutingModule } from './company-routing.module';
 
 
 
@@ -9,7 +12,13 @@ import { CompanyProfileComponent } from '../components/company-profile/company-p
     CompanyProfileComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CompanyRoutingModule,
+    JobsModule,
+    UsersModule
+  ],
+  exports: [
+    CompanyProfileComponent
   ]
 })
 export class CompanyModule { }

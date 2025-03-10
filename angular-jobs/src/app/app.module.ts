@@ -12,23 +12,19 @@ import { UsersListComponent } from './companies/components/users-list/users-list
 import { JobseekerProfileComponent } from './jobSeeker/components/jobseeker-profile/jobseeker-profile.component';
 import { MyJobsListComponent } from './jobSeeker/components/my-jobs-list/my-jobs-list.component';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
+import { CompanyModule } from './companies/company/company.module';
+import { AdminModule } from './admin/admin/admin.module';
+import { JobseekersModule } from './jobSeeker/jobseekers/jobseekers.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompaniesListComponent,
-    LookupsListComponent,
-    SettingsComponent,
-    CompanyProfileComponent,
-    JobsListComponent,
-    UsersListComponent,
-    JobseekerProfileComponent,
-    MyJobsListComponent,
-    DashboardComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

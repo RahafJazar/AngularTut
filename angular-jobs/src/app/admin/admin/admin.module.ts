@@ -4,6 +4,8 @@ import { DashboardComponent } from '../components/dashboard/dashboard.component'
 import { CompaniesModule } from '../companies/companies.module';
 import { SettingsModule } from '../settings/settings.module';
 import { UsersModule } from '../../companies/users/users.module';
+import { LookupsModule } from '../lookups/lookups.module';
+import { AdminRoutingModule } from './admin-routing.module';
 
 
 
@@ -11,11 +13,13 @@ import { UsersModule } from '../../companies/users/users.module';
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
+    AdminRoutingModule,
     CompaniesModule,
     SettingsModule,
- 
+    LookupsModule
+
   ],
-  exports:[
+  exports: [
     DashboardComponent
   ]
 })

@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'my-job',
-    loadChildren: () => import('../jobs/jobs.module').then(m => m.JobsModule)
+    component: MyJobsListComponent
   }
 ]
 
@@ -30,4 +30,4 @@ const routes: Routes = [
 
   ]
 })
-export class JobseekersRoutingModule { }
+export class JobsRoutingModule { }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyJobsListComponent } from '../components/my-jobs-list/my-jobs-list.component';
+import { JobsRoutingModule } from './jobseekers-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { MyJobsListComponent } from '../components/my-jobs-list/my-jobs-list.com
     MyJobsListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    JobsRoutingModule
   ],
   exports: [
     MyJobsListComponent
