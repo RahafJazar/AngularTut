@@ -1,0 +1,47 @@
+.header {
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    color: black;
+
+    .info {
+        display: flex;
+        justify-content: end;
+        font-family: sans-serif;
+
+
+        h2 {
+            margin-block-start: 1rem;
+            font-size: 15px !important;
+        }
+    }
+
+    .logo {
+        width: 5rem;
+        height: auto;
+    }
+
+    .links {
+        margin-block-start: 1rem;
+
+
+        a {
+            padding: 100px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+
+    }
+
+    .github-link {
+
+        margin-block-start: 1rem;
+
+        i {
+            color: black;
+        }
+    }
+}

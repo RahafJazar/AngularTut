@@ -1,0 +1,16 @@
+<div class="header">
+    <div class="info">
+        <img src="assets/images/ShopLogo-removebg-preview.png" alt="" class="logo">
+        <h2>Smart Market</h2>
+    </div>
+
+    <div class="links" *ngFor="let nav of navbar">
+        <a [href]="nav.url">{{nav.title}}</a>
+
+    </div>
+    <div class="github-link">
+        <a href="">
+            <i class="bi bi-github"></i>
+        </a>
+    </div>
+</div>
