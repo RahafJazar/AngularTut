@@ -14,8 +14,7 @@ import { CompanyRoutingModule } from './company-routing.module';
   imports: [
     CommonModule,
     CompanyRoutingModule,
-    JobsModule,
-    UsersModule
+   
   ],
   exports: [
     CompanyProfileComponent

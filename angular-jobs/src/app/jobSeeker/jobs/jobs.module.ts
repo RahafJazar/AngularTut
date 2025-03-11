@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyJobsListComponent } from '../components/my-jobs-list/my-jobs-list.component';
-import { JobsRoutingModule } from './jobseekers-routing.module';
+import { JobsRoutingModule } from './jobs-routing.module';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -11,7 +12,8 @@ import { JobsRoutingModule } from './jobseekers-routing.module';
   ],
   imports: [
     CommonModule,
-    JobsRoutingModule
+    JobsRoutingModule,
+    SharedModule
   ],
   exports: [
     MyJobsListComponent

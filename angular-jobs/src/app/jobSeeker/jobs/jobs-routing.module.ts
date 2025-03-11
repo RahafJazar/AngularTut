@@ -7,11 +7,9 @@ import { MyJobsListComponent } from '../components/my-jobs-list/my-jobs-list.com
 const routes: Routes = [
   {
     path: '',
-    component: JobseekerProfileComponent
-  },
-  {
-    path: 'jobSeeker',
-    component: JobseekerProfileComponent
+    pathMatch: 'full',
+    redirectTo: 'my-job'
+
   },
   {
     path: 'my-job',

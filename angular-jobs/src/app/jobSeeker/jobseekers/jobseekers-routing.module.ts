@@ -7,14 +7,15 @@ import { MyJobsListComponent } from '../components/my-jobs-list/my-jobs-list.com
 const routes: Routes = [
   {
     path: '',
-    component: JobseekerProfileComponent
+    pathMatch: 'full',
+    redirectTo: 'jobs'
   },
   {
     path: 'jobSeeker',
     component: JobseekerProfileComponent
   },
   {
-    path: 'my-job',
+    path: 'jobs',
     loadChildren: () => import('../jobs/jobs.module').then(m => m.JobsModule)
   }
 ]
