@@ -1,0 +1,14 @@
+<p>users works!</p>
+<div>
+    <a routerLink="/users/jordan/amman/2/asc" [queryParams]="querParam1">Amman</a> | 
+    <a routerLink="/users/jordan/irbid/3/desc" [queryParams]="{'test2': '10'}">Irbid</a> | 
+    <a routerLink="/users/jordan/zarqaa/4/asc" [queryParams]="{'test1': 'aaaa', 'test2': '54'}">Zarqaa</a>
+</div>
+<div>
+    <div>Country: {{country}}</div>
+    <div>City: {{city}}</div>
+    <div>Page: {{page}}</div>
+    <div>Sort: {{sort}}</div>
+</div>
+
+<button (click)="sendValue()">Send To Custom Route</button>

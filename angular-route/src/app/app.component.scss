@@ -1,0 +1,15 @@
+.header {
+    padding: 10px;
+    background-color: gray;
+    color: white;
+    a {
+        color: white;
+        text-decoration: none;
+        margin: 5px;
+        font-size: 20px;
+        &:visited {
+            color: white;
+        }
+
+    }
+}
