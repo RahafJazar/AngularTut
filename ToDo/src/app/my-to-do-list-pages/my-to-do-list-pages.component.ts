@@ -13,6 +13,7 @@ import { ToDoStatus } from '../models/enum/todo-status.enum';
 })
 export class MyToDoListPagesComponent {
   items: ToDo[] = this.initialItems();
+  item!: ToDo;
   initialItems(): ToDo[] {
     return [
       { title: "C#", status: ToDoStatus.New },
@@ -30,4 +31,24 @@ export class MyToDoListPagesComponent {
       this.items = this.initialItems()
     }
   }
+
+  filteredArray: ToDo[] = []
+  searchOnItem(itemSearch: string) {
+    if (itemSearch) {
+      this.filteredArray = this.items.filter(item =>
+        item.title.toLowerCase().includes(itemSearch.toLowerCase())
+      );
+    } else {
+      // If the search input is empty, show all items
+      this.filteredArray = [...this.items];
+    }
+  }
+
+  resetSearchHandler(isReset: boolean) {
+    if (isReset === true) {
+      this.filteredArray.length = 0;
+    }
+  }
+
+
 }

@@ -5,7 +5,7 @@
 <div class="buttons">
     <button (click)="clearList()" *ngIf="itemsList.length">Clear List </button>
     <button (click)="resetFactory()" *ngIf="itemsList.length">ResetFactory</button>
-    <button (click)="resetStatus()">ResetStatus</button>
+    <button (click)="resetStatus()" *ngIf="itemsList.length">ResetStatus</button>
 </div>
 <div>
     <div class="list-item" *ngFor="let item of itemsList ; let i=index"
@@ -16,12 +16,17 @@
         </div>
 
         <div class="actions">
-            <button (click)="deleteHandler(i)" *ngIf="item.status !==ToDoStatus.Deleted">Delete</button>
-            <button (click)="restoreHandler(item)" *ngIf="item.status ===ToDoStatus.Deleted">Restore</button>
-            <span>{{item.status}}</span>
+
+            <i class="bi bi-trash3-fill text-danger" (click)="deleteHandler(i)"
+                *ngIf="item.status !==ToDoStatus.Deleted"></i>
+            <i class="bi bi-arrow-clockwise text-white" (click)="restoreHandler(item)"
+                *ngIf="item.status ===ToDoStatus.Deleted"></i>
+            <span class="status">{{item.status}}</span>
         </div>
     </div>
-    <div *ngIf="itemsList.length == 0 " class="no-item-message">
-        There are no Items
+    <div *ngIf="itemsList.length == 0  && showAlert" class="alert-box">
+        <span>There are no Items</span>
+        <button class="clos-btn" (click)="closeAlert()">Close</button>
+
     </div>
 </div>

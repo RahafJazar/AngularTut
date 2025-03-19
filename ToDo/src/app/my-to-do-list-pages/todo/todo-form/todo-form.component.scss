@@ -1,0 +1,67 @@
+.todo-form {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+
+    .todo-form-Addition {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+        max-width: 15rem;
+
+        input {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border: 1px solid white;
+            border-left: 1px solid gray;
+            transform: translateX(-4px);
+            z-index: 1;
+        }
+
+        .add-button {
+            background-color: white;
+            align-content: center;
+            width: 10rem;
+            border: none;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+
+        }
+    }
+
+    .searchTab {
+        display: flex;
+        justify-content: space-between;
+
+
+        .seachBar {
+            position: relative;
+            margin-right: 30px;
+            display: flex;
+
+            align-content: center;
+
+            input {
+                display: inline-block;
+                width: 100%;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border: 1px solid white;
+            }
+
+            .clear {
+                background-color: white;
+                width: 50px;
+                align-content: center;
+                text-align: center;
+
+
+            }
+
+
+        }
+
+
+    }
+}

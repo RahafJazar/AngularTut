@@ -60,3 +60,43 @@
     max-width: 300px;
     overflow: auto;
 }
+
+.status {
+    background-color: white;
+    border-radius: 20px;
+    min-width: 4 rem;
+    text-align: center;
+}
+
+.alert-box {
+    width: 20rem;
+    height: 10rem;
+    background-color: red;
+    position: fixed;
+    top: 10%;
+    left: 40%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+
+
+    span {
+        font-family: fantasy;
+        color: white;
+        font-size: large;
+
+        letter-spacing: 1px;
+    }
+
+    button {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        width: fit-content;
+        border-radius: 20px;
+
+    }
+
+}

@@ -1,5 +1,23 @@
-<h1> Add Item Form</h1>
+<h2> Add Item Form</h2>
 <div class="todo-form">
-    <input type="text" [(ngModel)]="item">
-    <button type="button" (click)="clickHandler()">Add</button>
+    <div class="todo-form-Addition">
+        <input type="text" [(ngModel)]="item">
+        <div class="add-button">
+            <i class="bi bi-plus-circle-fill m-2 text-info h4" (click)="clickHandler()"></i>
+        </div>
+    </div>
+    <div>
+        <div *ngIf="!showSearch">
+            <i class="bi bi-search m-2 text-secondary h6" (click)="showSearchTab()"></i>
+        </div>
+        <div *ngIf="showSearch" class="searchTab">
+            <div class="seachBar">
+                <input type="text" [(ngModel)]="itemSearchOn">
+                <div class="clear">
+                    <i class="bi bi-x h4" (click)="resetSearch()"></i>
+                </div>
+            </div>
+            <i class="bi bi-search m-2 text-secondary h6" (click)="sendItemSearched()"></i>
+        </div>
+    </div>
 </div>

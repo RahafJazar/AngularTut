@@ -1,4 +1,6 @@
 <div class="wrapper">
-    <app-todo-form (itemAdd)="addItemHandler($event)"></app-todo-form>
-    <app-todo-list [itemsList]="items" (resetFactoryChange)="resetFactoryHandler($event)"></app-todo-list>
+    <app-todo-form (itemAdd)="addItemHandler($event)" (searchedItem)="searchOnItem($event)"
+        (searchReset)="resetSearchHandler($event)"></app-todo-form>
+    <app-todo-list [itemsList]="filteredArray.length ? filteredArray : items"
+        (resetFactoryChange)="resetFactoryHandler($event)"></app-todo-list>
 </div>
