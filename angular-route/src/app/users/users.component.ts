@@ -60,9 +60,97 @@ export class UsersComponent implements OnInit {
   sendValue(): void {
 
     this.customRoute.paramMap.next({ num: Math.random() })
+
+
+    //call fetch data function using callback technique
+    this.fetchData('www.google.com',
+      (data: any) => {
+        console.log('success', data)
+        this.fetchData('www.facebook.com',
+          (data: any) => {
+            this.fetchData('www.instagram.com',
+              (data: any) => {
+                this.fetchData('www.gmail.com',
+                  (data: any) => {
+
+                  },
+                  (error: any) => { },
+                )
+              },
+              (error: any) => { },
+            )
+          },
+          (error: any) => { },
+        )
+      },
+      (error: any) => {
+        console.error('failer', error)
+      }
+    )
+
+
+    //call fetchh data function using Promise in nested asynchronous  func
+    this.fetchDataUsingPromise('www.myapi.com/login', null)
+      .then((logiData: any) => {
+        return this.fetchDataUsingPromise('www.myapi.com/user', logiData);
+      })
+      .then((userData: any) => {
+        return this.fetchDataUsingPromise('www.myapi.com/company', userData);
+      }).catch((error: any) => {
+        return error
+      })
+
+
+    //call fetch data function using Promise technique
+
+    this.fetchDataUsingPromise('www.myapi.com/login', null).then((data: any) => {
+      return data;
+    }).catch((error: any) => {
+      return error
+    })
+    //call fetch data function using callback technique
+    this.fetchData('www.myapi.com/login', (data: any) => {
+      return data
+    },
+      (error: any) => {
+        return error
+      })
   }
 
+
+  //#region real implementation on Fetch
+  // fetch().then((value:Response)=>{}).catch((reason:any)=>{})
+
+
+  //use callback technique 
+  fetchData(url: string, successFn: any, failerFn: any): void {
+    setTimeout(() => {
+      if (url.includes('https')) {
+        successFn({ url: url, data: url })
+      }
+      else {
+        failerFn({ url: url, error: "invalid provided url" })
+      }
+    }, 2000);
+  }
+
+  //use Promise technique
+  fetchDataUsingPromise(url: string, data: any): Promise<any> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (url.includes('https')) {
+          resolve({ url: url, data: url })
+        }
+        else {
+          reject({ url: url, error: "invalid provided url" })
+        }
+      }, 2000);
+    })
+  }
 }
+
+
+
 
 class Observ<T> {
   data!: T;
