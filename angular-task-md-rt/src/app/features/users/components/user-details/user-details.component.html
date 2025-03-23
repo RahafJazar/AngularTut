@@ -1,0 +1,40 @@
+<!--User Form-->
+<div class="page-head">
+    <h3>Users Details</h3>
+    <div>
+        <a routerLink="/users/user-list">Users List</a>
+    </div>
+</div>
+<div class="user-details">
+    <div class="details-fields">
+
+        <div>
+            <div class="success loading" *ngIf="loading">
+                <img src="assets/images/loading-gif.gif" alt="" width="50px" height="50px">
+                Getting User details ....
+            </div>
+            <div *ngIf="error" class="error">
+
+                {{error}}
+
+            </div>
+            <div *ngIf="user && !loading">
+
+
+                <div class="form-control">
+                    <label for="">Name</label>
+                    <span>{{user.name}}</span>
+                </div>
+                <div class="form-control">
+                    <label for="">Email Address</label>
+                    <span>{{user.email}}</span>
+                </div>
+                <div class="form-control">
+                    <label for="">Password</label>
+                    <span>{{user.password | hidePassword :'*' :2}}</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
