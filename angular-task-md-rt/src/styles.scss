@@ -1,0 +1,92 @@
+/* You can add global styles to this file, and also import other style files */
+
+//shared style
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.error {
+    background-color: red;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    margin: 10px;
+}
+
+.success {
+    background-color: greenyellow;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+}
+
+
+.form-control {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+
+    label {
+        padding: 5px;
+        font-weight: bold;
+    }
+
+
+
+    input,
+    button {
+        border: 1px solid gold;
+        border-radius: 5px;
+        padding: 10px;
+        min-width: 200px;
+    }
+
+    button {
+
+        background-color: gold;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+    }
+}
+
+.page-head {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+        padding: 5px;
+    }
+
+    button {
+
+        width: 200px;
+        height: 40px;
+        font-weight: bold;
+        background-color: gold;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.pagination {
+    padding: 5px;
+
+
+    a {
+        text-decoration: none;
+        color: black;
+        background-color: antiquewhite;
+
+        & .active {
+            font-weight: bold;
+            font-style: italic;
+        }
+    }
+
+}

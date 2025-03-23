@@ -1,0 +1,23 @@
+.loading {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+
+    &>* {
+        padding-right: 30px;
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    button {
+        background-color: blueviolet;
+        color: white;
+    }
+}
+
+ 
