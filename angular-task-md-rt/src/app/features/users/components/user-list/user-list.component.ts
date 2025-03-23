@@ -28,5 +28,4 @@ export class UserListComponent implements OnInit {
   detailUser(): void {
     throw new Error('Method not implemented.');
   }
-
 }
