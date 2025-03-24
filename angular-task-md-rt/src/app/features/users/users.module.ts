@@ -9,6 +9,7 @@ import { HidePasswordPipe } from '../shared/pipes/hide-password.pipe';
 import { CapitalizePipe } from '../shared/pipes/capitalize.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { UserFeaturesWrapperListComponent } from './components/user-features-wrapper-list/user-features-wrapper-list.component';
 
 const userComponents = [
   UserListComponent,
@@ -17,7 +18,8 @@ const userComponents = [
 ]
 @NgModule({
   declarations: [
-    ...userComponents
+    ...userComponents,
+    UserFeaturesWrapperListComponent
   ],
   imports: [
     CommonModule,

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { UserFeaturesWrapperListComponent } from './components/user-features-wrapper-list/user-features-wrapper-list.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,12 @@ const routes: Routes = [
   {
     path: 'add',
     component: UserFormComponent
+  },
+
+
+  {
+    path: 'features',
+    component: UserFeaturesWrapperListComponent
   }
 ];
 

@@ -95,3 +95,19 @@ body {
         }
     }
 }
+
+.page-size {
+    padding: 10px;
+    margin: 10px;
+
+    a {
+        padding: 5px;
+        cursor: pointer;
+
+        &.active {
+            font-weight: bold;
+            cursor: default;
+            text-decoration: underline;
+        }
+    }
+}

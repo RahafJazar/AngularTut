@@ -6,7 +6,14 @@
     <img src="assets/images/loading-gif.gif" alt="" width="50px" height="50px">
     Loading User
 </div>
-<table border="1" width="100%" *ngIf="!loading">
+
+<div class="page-size">
+    Number of items to show <a (click)="changeSize(5)" [class.active]="size === 5">5</a> |<a (click)="changeSize(10)"
+        [class.active]="size === 10">10</a> |<a (click)="changeSize(20)" [class.active]="size === 20">20</a>
+    <a (click)="clearUsers()"> Clear All</a>
+</div>
+
+<table border="1" width="100%" *ngIf="!loading && users.length">
     <thead>
         <tr>
             <th>ID</th>
@@ -28,7 +35,7 @@
                 <div class="actions">
                     <button class="cursor-pointer" routerLink="/users/edit/{{user.id}}">Edit</button>
                     <button class="cursor-pointer" routerLink="/users/user-details/{{user.id}}">Details </button>
-                    <button class="cursor-pointer" (click)="deleteUser(user,i)">Delete</button>
+                    <button class="cursor-pointer" (click)="deleteUser(user)">Delete</button>
                 </div>
             </td>
         </tr>
@@ -36,7 +43,7 @@
 </table>
 
 currentPage :{{currentPage}}
-<div class="pagination">
+<div class="pagination" *ngIf="pages.length>1 && !loading">
     <a *ngFor="let pageNum of pages" [class.active]="currentPage === pageNum " routerLink="/users/user-list"
         [queryParams]="{page:pageNum}">{{pageNum}}</a>
 </div>

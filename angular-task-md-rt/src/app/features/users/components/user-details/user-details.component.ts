@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { getUser } from '../../../database/users';
+import { getUser } from '../../../database/users-localStoraage';
 import User from '../../../models/user.model';
 
 @Component({
@@ -13,24 +13,24 @@ export class UserDetailsComponent implements OnInit {
   success: string = '';
   loading: boolean = false;
   id: string | null = '';
-  user!:User ;
+  user!: User;
   constructor(private route: ActivatedRoute) {
 
   }
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')
-    if(this.id){
-    this.loading=true
-    getUser(this.id).then((user:User)=>{
+    if (this.id) {
+      this.loading = true
+      getUser(this.id).then((user: User) => {
 
-      this.loading=false;
-      this.user=user
-    }).catch((error:string)=>{
-      this.error=error;
-      this.loading=false
-    })
-  }else{
-    this.error='Invalid user id '
-  }
+        this.loading = false;
+        this.user = user
+      }).catch((error: string) => {
+        this.error = error;
+        this.loading = false
+      })
+    } else {
+      this.error = 'Invalid user id '
+    }
   }
 }

@@ -7,12 +7,14 @@ import { RouterModule } from '@angular/router';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { HidePasswordPipe } from './pipes/hide-password.pipe';
 import { FormsModule } from '@angular/forms';
+import { FeaturesWrapperListComponent } from './components/features-wrapper-list/features-wrapper-list.component';
 
 
 const sharedAuthComp = [
   AuthLayoutComponent,
   AuthHeaderComponent,
-  AuthFooterComponent
+  AuthFooterComponent,
+  FeaturesWrapperListComponent
 ]
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ const sharedAuthComp = [
     HidePasswordPipe,
     CapitalizePipe,
     AuthLayoutComponent,
-    FormsModule
+    FormsModule,
+    FeaturesWrapperListComponent
   ]
 })
 export class SharedModule { }

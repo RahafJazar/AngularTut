@@ -1,5 +1,5 @@
 import { Component, OnInit, ɵgetLocaleCurrencyCode } from '@angular/core';
-import { addUser, getUser, updateUser } from '../../../database/users';
+import { addUser, getUser, updateUser } from '../../../database/users-localStoraage';
 import User from '../../../models/user.model';
 import { ActivatedRoute } from '@angular/router';
 
@@ -26,7 +26,7 @@ export class UserFormComponent implements OnInit {
     if (this.id) {
       this.loadingForGet = true;
       getUser(this.id).then((user: User) => {
-        this.loadingForGet=false
+        this.loadingForGet = false
         this.name = user.name;
         this.email = user.email;
         this.password = user.password;

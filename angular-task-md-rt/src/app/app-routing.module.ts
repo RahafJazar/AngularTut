@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { AuthLayoutComponent } from './features/shared/components/auth-layout/auth-layout.component';
+import { MainFeaturesWrapperListComponent } from './components/main-features-wrapper-list/main-features-wrapper-list.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'wrapper-features',
+    component: MainFeaturesWrapperListComponent
   }
 ];
 
