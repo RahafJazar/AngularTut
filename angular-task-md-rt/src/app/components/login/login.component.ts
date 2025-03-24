@@ -28,9 +28,11 @@ export class LoginComponent {
       this.loading = true
       loginUser(this.email, this.password).then((user: User) => {
         console.log(this.email + " " + this.password)
-        this.loading = false
-        this.success = true,
-          alert(`welcome user:  + ${user.name}`)
+        this.loading = false;
+        this.success = true;
+        this.error = '';
+        if (!this.loading && this.error == '' && this.success == true)
+          alert(`welcome user:  + ${user.name}`);
         setTimeout(() => {
           this.router.navigate(['users'])
         }, 1000);

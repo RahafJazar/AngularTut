@@ -1,6 +1,8 @@
 import { ReplaySubject } from "rxjs";
 import User from "../models/user.model";
 import { EmailValidator } from "@angular/forms";
+import PaginatedResponse from "../shared/models/paginated-response";
+import { signal } from "@angular/core";
 
 //multi functions that will fill the user data 
 const users: User[] = [
@@ -32,14 +34,86 @@ const users: User[] = [
         password: "86924",
         created_at: new Date('2025-01-01')
     },
+    {
+        id: 'user-5',
+        name: "Doaa",
+        email: "doaa@gmail.com",
+        password: "82394",
+        created_at: new Date("2024-05-01")
+    },
+    {
+        id: 'user-6',
+        name: "gameel mayasrah",
+        email: "gameel@gmail.com",
+        password: "77533",
+        created_at: new Date('2025-03-15')
+    },
+    {
+        id: 'user-7',
+        name: "Salah  khader  ",
+        email: "Salah@gmail.com",
+        password: "62744",
+        created_at: new Date('2024-01-05')
+    },
+    {
+        id: 'user-8',
+        name: "qarar otoob",
+        email: "qarar@gmail.com",
+        password: "43434",
+        created_at: new Date('2024-01-01')
+    },
+    {
+        id: 'user-9',
+        name: "tamara jazar",
+        email: "ramara@gmail.com",
+        password: "53353",
+        created_at: new Date('2024-06-01')
+    },
+    {
+        id: 'user-10',
+        name: "lama otoob",
+        email: "lama@gmail.com",
+        password: "43434",
+        created_at: new Date('2024-11-01')
+    },
+    {
+        id: 'user-11',
+        name: "sana yazeed",
+        email: "sana@gmail.com",
+        password: "53535",
+        created_at: new Date('2024-09-12')
+    },
+    {
+        id: 'user-12',
+        name: "baraa dawoud",
+        email: "baraa@gmail.com",
+        password: "4533",
+        created_at: new Date('2024-12-01')
+    },
 ]
 
 
 //get data of users  but i don't want to return direct => I want to use asynchronous  بتحاكي عمل الباكند
-export const getUsers = (): Promise<User[]> => {
+export const getUsers = (page: number, pageSize: number): Promise<PaginatedResponse<User>> => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(users)
+            const start = (page - 1) * pageSize;
+            const end = start + pageSize;
+            const totalPages = Math.ceil(users.length / pageSize);
+            const totalItems = users.length;
+            const data: User[] = users.slice(start, end);
+            const response: PaginatedResponse<User> = {
+                page,
+                totalPages,
+                totalItems,
+                data,
+            }
+            console.log("start", start)
+            console.log("start", end)
+            console.log("totalPages", totalPages)
+            console.log("totalItems", totalItems)
+            console.log("data", data)
+            resolve(response)
         }, 3000);
     })
 }

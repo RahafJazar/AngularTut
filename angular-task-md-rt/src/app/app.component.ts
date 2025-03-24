@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-task-md-rt';
+  constructor(private router: Router) {
+
+  }
+  // ngOnInit(): void {
+  //   this.router.navigate(['login'])
+  // }
+
+
 }

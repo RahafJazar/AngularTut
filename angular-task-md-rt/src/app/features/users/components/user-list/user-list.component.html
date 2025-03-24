@@ -35,6 +35,8 @@
     </tbody>
 </table>
 
+currentPage :{{currentPage}}
 <div class="pagination">
-    <a *ngFor="let pageNum of pages" [class.active]="currentPage === pageNum ">{{pageNum}}</a>
+    <a *ngFor="let pageNum of pages" [class.active]="currentPage === pageNum " routerLink="/users/user-list"
+        [queryParams]="{page:pageNum}">{{pageNum}}</a>
 </div>

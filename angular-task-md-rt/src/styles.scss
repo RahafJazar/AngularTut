@@ -75,17 +75,23 @@ body {
 }
 
 .pagination {
-    padding: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: rgb(255, 188, 101);
+    text-align: center;
 
 
     a {
+        margin: 5px;
         text-decoration: none;
         color: black;
-        background-color: antiquewhite;
+        cursor: pointer;
 
-        & .active {
+        &.active {
             font-weight: bold;
             font-style: italic;
+            border: 1px solid black;
+            cursor: default;
         }
     }
 }
