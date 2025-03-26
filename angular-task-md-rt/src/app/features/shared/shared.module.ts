@@ -8,6 +8,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { HidePasswordPipe } from './pipes/hide-password.pipe';
 import { FormsModule } from '@angular/forms';
 import { FeaturesWrapperListComponent } from './components/features-wrapper-list/features-wrapper-list.component';
+import { AuthService } from './services/auth.service';
 
 
 const sharedAuthComp = [
@@ -25,14 +26,19 @@ const sharedAuthComp = [
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+
   ],
   exports: [
     HidePasswordPipe,
     CapitalizePipe,
     AuthLayoutComponent,
     FormsModule,
-    FeaturesWrapperListComponent
+    FeaturesWrapperListComponent,
+    AuthService
+  ],
+  providers: [
+    { provide: AuthService, useClass: AuthService }
   ]
 })
 export class SharedModule { }

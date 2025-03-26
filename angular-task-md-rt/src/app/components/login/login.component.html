@@ -23,7 +23,7 @@
             </div>
             <div class="form-control">
                 <label for="">Remember me</label>
-                <input type="checkbox" (click)="RememberUser()">
+                <input type="checkbox" (click)="RememberUser()"   [(ngModel)]="rememberMe">
             </div>
             <div class="form-control">
                 <button (click)="userLogin()">Login</button>

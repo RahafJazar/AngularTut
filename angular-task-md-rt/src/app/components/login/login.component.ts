@@ -1,9 +1,10 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { loginUser } from '../../features/database/users';
 import User from '../../features/models/user.model';
+import { isTemplateLiteral } from 'typescript';
 
 @Component({
   selector: 'app-login',
@@ -28,6 +29,8 @@ export class LoginComponent implements OnInit {
 
 
     if (remeber === 'true') {
+      this.email = localStorage.getItem('email') || '';
+      this.rememberMe = true;
       const userData = localStorage.getItem('current-user')
       currentUser = userData ? JSON.parse(userData) : null;
     }
@@ -53,6 +56,7 @@ export class LoginComponent implements OnInit {
 
         localStorage.setItem('remember-me', JSON.stringify(this.rememberMe))
         if (this.rememberMe) {
+          localStorage.setItem('email', this.email + '')
           localStorage.setItem('current-user', JSON.stringify(user))
         } else {
           sessionStorage.setItem('current-user', JSON.stringify(user))
