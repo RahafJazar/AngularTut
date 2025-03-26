@@ -5,7 +5,7 @@
         <div>
             <div class="success loading" *ngIf="loading">
                 <img src="assets/images/loading-gif.gif" alt="" width="50px" height="50px">
-                 verifying  User ....
+                verifying User ....
             </div>
             <div *ngIf="error" class="error">
                 {{error}}
@@ -20,6 +20,10 @@
             <div class="form-control">
                 <label for="">Password</label>
                 <input type="password" name="password" [(ngModel)]="password">
+            </div>
+            <div class="form-control">
+                <label for="">Remember me</label>
+                <input type="checkbox" (click)="RememberUser()">
             </div>
             <div class="form-control">
                 <button (click)="userLogin()">Login</button>

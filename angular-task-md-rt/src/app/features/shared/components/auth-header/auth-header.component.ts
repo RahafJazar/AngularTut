@@ -8,5 +8,15 @@ import { Router } from '@angular/router';
 })
 export class AuthHeaderComponent {
   constructor(private router: Router) { }
+  logoutClick() {
+    const remeber: any = localStorage.getItem('remember-me') || null;
+    if ((remeber === 'true')) {
+      localStorage.removeItem('current-user')
+    } else {
+      sessionStorage.removeItem('current-user')
+    }
+    this.router.navigate(['login'])
+  }
+
 
 }

@@ -51,6 +51,11 @@ body {
         font-weight: bold;
         font-size: 18px;
     }
+
+    input[type=checkbox] {
+        width: 1rem;
+        height: 1rem;
+    }
 }
 
 .page-head {

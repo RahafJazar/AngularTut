@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { loginUser } from '../../features/database/users';
@@ -12,15 +12,33 @@ import User from '../../features/models/user.model';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   email: string = '';
   password: string = '';
   error: string = '';
   success: boolean = false;
-  loading: boolean = false
+  loading: boolean = false;
+  rememberMe: boolean = false;
 
   constructor(private router: Router) { }
+  ngOnInit(): void {
+    const remeber: any = localStorage.getItem('remember-me') || null;
+    let currentUser: any = null
+
+
+    if (remeber === 'true') {
+      const userData = localStorage.getItem('current-user')
+      currentUser = userData ? JSON.parse(userData) : null;
+    }
+    else {
+      const userData = sessionStorage.getItem('current-user')
+      currentUser = userData ? JSON.parse(userData) : null
+    }
+    if (currentUser) {
+      this.router.navigate(['users'])
+    }
+  }
   userLogin() {
     //check if email and password are valid 
     if (this.email.trim() && this.password.trim()) {
@@ -31,11 +49,21 @@ export class LoginComponent {
         this.loading = false;
         this.success = true;
         this.error = '';
-        if (!this.loading && this.error == '' && this.success == true)
+
+
+        localStorage.setItem('remember-me', JSON.stringify(this.rememberMe))
+        if (this.rememberMe) {
+          localStorage.setItem('current-user', JSON.stringify(user))
+        } else {
+          sessionStorage.setItem('current-user', JSON.stringify(user))
+        }
+        if (!this.loading && this.error == '' && this.success == true) {
+
+
           alert(`welcome user:  + ${user.name}`);
-        setTimeout(() => {
+
           this.router.navigate(['users'])
-        }, 1000);
+        };
       }).catch((error: string) => {
         this.loading = false
 
@@ -45,5 +73,8 @@ export class LoginComponent {
     }
     else
       this.error = "invalid email and password";
+  }
+  RememberUser() {
+    this.rememberMe = !this.rememberMe
   }
 }
