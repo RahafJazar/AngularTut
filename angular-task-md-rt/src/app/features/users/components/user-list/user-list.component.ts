@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import { getUsers, fillData, deleteUser, clearAllUsers } from '../../../database/users-localStoraage';
-import User from '../../../models/user.model';
+
+
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import PaginatedResponse from '../../../shared/models/paginated-response';
 import { signalSetFn } from '@angular/core/primitives/signals';
 import { from } from 'rxjs';
+// import { clearAllUsers, deleteUser, fillData, getUsers } from '../../database/users-localStoraage';
+import User from '../../models/user.model';
+import { UsersService } from '../../services/users.service';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -19,11 +22,12 @@ export class UserListComponent implements OnInit {
   currentPage: number = 1
   size: number = 5;
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, private userService: UsersService) { }
 
   ngOnInit(): void {
 
-    fillData()
+    // fillData()
+    this.userService.fillData()
     this.route.queryParams.subscribe((queryParams: Params) => {
       this.currentPage = parseInt(queryParams['page'] || 1)
       console.log("page param :", parseInt(queryParams['page'] || 1))
@@ -37,7 +41,8 @@ export class UserListComponent implements OnInit {
 
   loadUsers(): void {
     this.loading = true
-    getUsers(this.currentPage, this.size).then((response: PaginatedResponse<User>) => {
+    // getUsers(this.currentPage, this.size).then((response: PaginatedResponse<User>) => {
+    this.userService.getUsers(this.currentPage, this.size).then((response: PaginatedResponse<User>) => {
       if (this.currentPage > response.totalPages) {
         this.router.navigate(['users', 'user-list'], { queryParams: { page: 1, size: this.size } });
 
@@ -58,7 +63,8 @@ export class UserListComponent implements OnInit {
   deleteUser(user: User): void {
 
 
-    deleteUser(user).then((status: boolean) => {
+    // deleteUser(user).then((status: boolean) => {
+    this.userService.deleteUser(user).then((status: boolean) => {
       alert(`User ${user.name} deleted successfully`);
     }).catch((error: String) => {
 
@@ -78,7 +84,8 @@ export class UserListComponent implements OnInit {
   }
 
   clearUsers(): void {
-    clearAllUsers();
+    // clearAllUsers();
+    this.userService.clearAllUsers();
     this.pages = [];
     this.users = []
   }

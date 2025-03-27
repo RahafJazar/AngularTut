@@ -2,9 +2,10 @@ import { CommonModule, JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { loginUser } from '../../features/database/users';
-import User from '../../features/models/user.model';
+
 import { isTemplateLiteral } from 'typescript';
+import User from '../../features/users/models/user.model';
+import { loginUser } from '../../features/users/database/users';
 
 @Component({
   selector: 'app-login',

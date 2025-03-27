@@ -15,7 +15,8 @@ const sharedAuthComp = [
   AuthLayoutComponent,
   AuthHeaderComponent,
   AuthFooterComponent,
-  FeaturesWrapperListComponent
+  FeaturesWrapperListComponent,
+
 ]
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ const sharedAuthComp = [
     AuthLayoutComponent,
     FormsModule,
     FeaturesWrapperListComponent,
-    AuthService
+
   ],
   providers: [
     { provide: AuthService, useClass: AuthService }

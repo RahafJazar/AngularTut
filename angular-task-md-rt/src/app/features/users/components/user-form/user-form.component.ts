@@ -1,7 +1,11 @@
 import { Component, OnInit, ɵgetLocaleCurrencyCode } from '@angular/core';
-import { addUser, getUser, updateUser } from '../../../database/users-localStoraage';
-import User from '../../../models/user.model';
+
+
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../../shared/services/auth.service';
+import User from '../../models/user.model';
+import { UsersService } from '../../services/users.service';
+// import { addUser, getUser, updateUser } from '../../database/users-localStoraage';
 
 @Component({
   selector: 'app-user-form',
@@ -18,14 +22,16 @@ export class UserFormComponent implements OnInit {
   loading: boolean = false
   id: string | null = ''
   loadingForGet: boolean = false;
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private authService: AuthService, private userService: UsersService) {
 
   }
   ngOnInit(): void {
+    this.authService.log("Hello from user form component ")
     this.id = this.route.snapshot.paramMap.get('id')
     if (this.id) {
       this.loadingForGet = true;
-      getUser(this.id).then((user: User) => {
+      // getUser(this.id).then((user: User) => {
+      this.userService.getUser(this.id).then((user: User) => {
         this.loadingForGet = false
         this.name = user.name;
         this.email = user.email;
@@ -50,7 +56,8 @@ export class UserFormComponent implements OnInit {
 
       if (this.id) {
         user.id = this.id;
-        updateUser(user).then(
+        // updateUser(user).then(
+        this.userService.updateUser(user).then(
           (user: User) => {
             this.loading = false;
             this.success = "user " + user.name + " added successfully";
@@ -64,7 +71,8 @@ export class UserFormComponent implements OnInit {
 
       } else {
         this.loading = true
-        addUser(user).then((user: User) => {
+        // addUser(user).then((user: User) => {
+        this.userService.addUser(user).then((user: User) => {
           this.loading = false;
           this.success = "user " + user.name + " added successfully";
         })

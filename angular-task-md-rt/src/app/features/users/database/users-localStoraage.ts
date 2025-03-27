@@ -1,8 +1,9 @@
 import { ReplaySubject } from "rxjs";
 import User from "../models/user.model";
 import { EmailValidator } from "@angular/forms";
-import PaginatedResponse from "../shared/models/paginated-response";
+ 
 import { signal } from "@angular/core";
+import PaginatedResponse from "../../shared/models/paginated-response";
 
 //multi functions that will fill the user data 
 // const users: User[] = [
