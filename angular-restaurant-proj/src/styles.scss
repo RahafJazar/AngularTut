@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.error {
+    background-color: red;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.success {
+    background-color: green;
+    padding: 5px;
+    font-weight: bold;
+}
+
+//forms inputs field style
+.form-wrapper {
+    padding: 3px;
+    margin-bottom: 50px;
+    position: relative;
+    width: 60%;
+
+
+    input {
+        border: none;
+        border-bottom: 1px solid black;
+        width: 100%;
+    }
+
+    i {
+        position: absolute;
+        right: 0;
+        top: 0px;
+    }
+}
+
+//loading something
+.loading {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+
+    &>* {
+        padding-right: 30px;
+    }
+}
+
+//page-head (add new user)
+.page-head {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+        padding: 5px;
+
+    }
+
+    button {
+
+        width: 200px;
+        height: 50px;
+        font-weight: bold;
+    }
+}

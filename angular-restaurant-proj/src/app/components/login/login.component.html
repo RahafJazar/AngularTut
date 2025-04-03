@@ -1,0 +1,31 @@
+<div class="login-page">
+    <div class="login">
+        <div class="login-image-holder">
+            <img src="assets/images/restaurantLoginPicture-removebg-preview.jpg" alt="">
+        </div>
+        <div class="login-form">
+            <h1>LOGIN FORM</h1>
+            <div class="form-wrapper">
+
+                <input type="text" name="email" id="email" [(ngModel)]="email" placeholder="Email Address">
+                <i class="bi bi-envelope"></i>
+            </div>
+            <div class="form-wrapper">
+
+                <input type="text" name="password" id="password" [(ngModel)]="password" placeholder="Password">
+                <i class="bi bi-lock"></i>
+            </div>
+            <div class="login-submit">
+                <button (click)="userLogin()">Login</button>
+            </div>
+
+            <div class="success" *ngIf="success">
+                Logging User ...
+            </div>
+            <div class="error" *ngIf="error">
+                {{error}}
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,38 @@
+<!---add new user-->
+<div class="page-head">
+    <h3>Users List</h3>
+    <button>Add User</button>
+</div>
+<!---Loading users -->
+<div class="success loading" *ngIf="loading">
+    <img src="assets/images/loading-gif.gif" alt="" width="50px" height="50px">
+    Loading users ...
+</div>
+<table border="1" width="100%" *ngIf="!loading">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>PASSWORD</th>
+            <th>CREATED_AT</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users ; let i=index">
+            <td>{{user.id}}</td>
+            <td>{{user.name |capitalize}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password |hidePassword: '*':1 }}</td>
+            <td>{{user.created_at | date :'dd, MM ,yyyy'}}</td>
+            <td>
+                <div class="actions">
+                    <button class="cursor-pointer" routerLink="/users/edit/{{user.id}}">Edit</button>
+                    <button class="cursor-pointer" routerLink="/users/user-details/{{user.id}}">Details </button>
+                    <button class="cursor-pointer" (click)="deleteUser(user,i)">Delete</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
